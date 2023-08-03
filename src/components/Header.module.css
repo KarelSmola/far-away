@@ -1,0 +1,13 @@
+.header {
+  grid-area: header;
+  padding: 1rem 0;
+  background-color: rgb(236, 122, 77);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-title {
+  font-size: 4rem;
+  text-transform: uppercase;
+}

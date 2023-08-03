@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Header from "./components/Header";
+import Form from "./components/Form";
+import ItemsList from "./components/ItemsList";
+import Stats from "./components/Stats";
 
-function App() {
+import Wrapper from "./components/UI/Wrapper";
+
+const App = () => {
+  const [items, setItems] = useState([]);
+
+  const addItem = (item) => {
+    setItems((prevItems) => [...prevItems, { ...item }]);
+  };
+
+  const deleteItem = (id) => {
+    setItems((prevItems) => prevItems.filter((item) => item.id !== id));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Wrapper>
+      <Header />
+      <Form onNewItem={addItem} />
+      <ItemsList items={items} removeItem={deleteItem} />
+      <Stats />
+    </Wrapper>
   );
-}
+};
 
 export default App;

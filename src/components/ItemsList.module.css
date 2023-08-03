@@ -1,0 +1,20 @@
+.items-list {
+  grid-area: list;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style-type: none;
+}
+
+.item {
+  display: flex;
+  gap: 1rem;
+}
+
+.item-title {
+  font-weight: 300;
+}
+
+.item-btn {
+  cursor: pointer;
+}
