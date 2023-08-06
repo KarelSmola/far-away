@@ -1,3 +1,10 @@
+.items-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .items-list {
   grid-area: list;
   display: flex;
@@ -11,10 +18,14 @@
   gap: 1rem;
 }
 
-.item-title {
+.item-description {
   font-weight: 300;
 }
 
 .item-btn {
   cursor: pointer;
+}
+
+.item-underline {
+  text-decoration: line-through;
 }
