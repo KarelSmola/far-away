@@ -10,7 +10,16 @@ const App = () => {
   const [items, setItems] = useState([]);
 
   const addItem = (item) => {
+    console.log(item);
     setItems((prevItems) => [...prevItems, { ...item }]);
+  };
+
+  const togglePackedItem = (id) => {
+    setItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id ? { ...item, packed: !item.packed } : item
+      )
+    );
   };
 
   const deleteItem = (id) => {
@@ -21,7 +30,11 @@ const App = () => {
     <Wrapper>
       <Header />
       <Form onNewItem={addItem} />
-      <ItemsList items={items} removeItem={deleteItem} />
+      <ItemsList
+        items={items}
+        packedItem={togglePackedItem}
+        removeItem={deleteItem}
+      />
       <Stats />
     </Wrapper>
   );

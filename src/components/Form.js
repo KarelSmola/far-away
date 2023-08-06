@@ -18,6 +18,7 @@ const Form = ({ onNewItem }) => {
 
     onNewItem({
       id: Math.random().toString(),
+      packed: false,
       amount: inputValue.amount,
       title: inputValue.title,
     });
