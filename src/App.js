@@ -25,6 +25,10 @@ const App = () => {
     );
   };
 
+  const clearAllItems = () => {
+    window.confirm("test") && setItems([]);
+  };
+
   return (
     <Wrapper>
       <Header />
@@ -33,6 +37,7 @@ const App = () => {
         items={items}
         removeItem={deleteItem}
         packedItem={togglePackedItem}
+        clearList={clearAllItems}
       />
       <Stats items={items} />
     </Wrapper>

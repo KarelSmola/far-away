@@ -1,0 +1,16 @@
+item {
+  display: flex;
+  gap: 1rem;
+}
+
+.item-title {
+  font-weight: 300;
+}
+
+.item-btn {
+  cursor: pointer;
+}
+
+.item-underline {
+  text-decoration: line-through;
+}
