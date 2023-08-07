@@ -1,16 +1,36 @@
-item {
+.item {
   display: flex;
+  justify-content: space-between;
   gap: 1rem;
+  padding: 1rem 2rem;
+  width: 100%;
+  background-color: rgb(255, 229, 200);
+  border-radius: 1rem;
 }
 
-.item-title {
-  font-weight: 300;
-}
-
-.item-btn {
+.checkbox {
+  width: 2rem;
+  height: 2rem;
   cursor: pointer;
+}
+
+.item-title,
+.item-underline {
+  font-size: 1.8rem;
+  font-weight: 500;
 }
 
 .item-underline {
   text-decoration: line-through;
+  color: gray;
+}
+
+.delete-btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  transform: scale(1.05);
 }

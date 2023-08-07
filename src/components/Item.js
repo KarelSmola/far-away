@@ -6,6 +6,7 @@ const Item = ({ item, packedItem, removeItem }) => {
   return (
     <li className={classes.item}>
       <input
+        className={classes.checkbox}
         type="checkbox"
         checked={item.packed}
         onChange={() => {
@@ -21,10 +22,10 @@ const Item = ({ item, packedItem, removeItem }) => {
       </p>
 
       <button
-        className={classes["item-btn"]}
+        className={classes["delete-btn"]}
         onClick={() => removeItem(item.id)}
       >
-        Delete
+        ❌
       </button>
     </li>
   );

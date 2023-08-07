@@ -1,8 +1,10 @@
-.items-wrapper {
+.items-container {
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
+  gap: 1rem;
+  width: 30%;
 }
 
 .items-list {
@@ -10,22 +12,29 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 0.5rem;
+  width: 100%;
   list-style-type: none;
 }
 
-.item {
+.sort-wrapper {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
+  padding: 1rem;
 }
 
-.item-description {
-  font-weight: 300;
+.select {
+  padding: 0.5rem 1rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  border-radius: 1rem;
 }
 
-.item-btn {
-  cursor: pointer;
+.select:focus {
+  outline: 2px solid rgb(236, 122, 77);
 }
 
-.item-underline {
-  text-decoration: line-through;
+.clear-btn {
+  font-size: 1.8rem;
+  background-color: rgb(236, 122, 77);
 }

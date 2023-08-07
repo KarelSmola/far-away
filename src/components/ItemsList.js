@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Item from "./Item";
 
+import Button from "./UI/Button";
 import classes from "./ItemsList.module.css";
 
 const ItemsList = ({ items, removeItem, packedItem, clearList }) => {
@@ -18,7 +19,23 @@ const ItemsList = ({ items, removeItem, packedItem, clearList }) => {
       .sort((a, b) => Number(a.amount) - Number(b.amount));
 
   return (
-    <div className={classes["items-wrapper"]}>
+    <div className={classes["items-container"]}>
+      <div className={classes["sort-wrapper"]}>
+        <select
+          className={classes.select}
+          value={sortBy}
+          onChange={(e) => {
+            setSortBy(e.target.value);
+          }}
+        >
+          <option value="input">Sort by input</option>
+          <option value="title">Sort by title</option>
+          <option value="amount">Sort by amount</option>
+        </select>
+        <Button className={classes["clear-btn"]} onClick={clearList}>
+          Clear List
+        </Button>
+      </div>
       <ul className={classes["items-list"]}>
         {sortedItems.map((item) => (
           <Item
@@ -29,19 +46,6 @@ const ItemsList = ({ items, removeItem, packedItem, clearList }) => {
           />
         ))}
       </ul>
-      <div>
-        <select
-          value={sortBy}
-          onChange={(e) => {
-            setSortBy(e.target.value);
-          }}
-        >
-          <option value="input">Sort by input</option>
-          <option value="title">Sort by title</option>
-          <option value="amount">Sort by amount</option>
-        </select>
-        <button onClick={clearList}>Clear List</button>
-      </div>
     </div>
   );
 };
