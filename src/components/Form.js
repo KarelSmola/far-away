@@ -32,13 +32,18 @@ const Form = ({ onNewItem }) => {
       <form className={classes.form} onSubmit={submitHandler}>
         <div className={classes["label-container"]}>
           <label className={classes.label}>Amount</label>
-          <input
-            className={`${classes.input} ${classes["input-amount"]}`}
-            type="number"
+          <select
+            className={classes.input}
             name="amount"
-            onChange={inputChangeHandler}
             value={inputValue.amount}
-          />
+            onChange={inputChangeHandler}
+          >
+            {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
+              <option value={num} key={num}>
+                {num}
+              </option>
+            ))}
+          </select>
         </div>
         <div className={classes["label-container"]}>
           <label className={classes.label}>New Item</label>
